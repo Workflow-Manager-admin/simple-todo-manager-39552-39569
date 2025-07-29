@@ -29,17 +29,44 @@ function TodosPage({
     <div className="body--screen" style={{ minHeight: '100vh' }}>
       <StatusBar />
       <AppBar title="TODO APP" rightCircleIcon={true} />
-      <nav className="navbar">
-        <button className="navbar-button" aria-label="playlist" onClick={onNavAll}>
+      <nav className="navbar" style={{ marginBottom: "10px" }}>
+        <button
+          className="navbar-button"
+          aria-label="playlist"
+          onClick={onNavAll}
+          style={{
+            opacity: filter === "all" ? 1 : 0.6,
+            background: "none",
+            border: "none"
+          }}
+        >
           <span className="icon playlist" />
         </button>
-        <span className="nav-label typo-6" style={{ color: filter === "all" ? "var(--color-9395d3)" : "" }}>All</span>
-        <button className="navbar-icon" aria-label="tick" onClick={onNavCompleted}>
+        <span className="nav-label typo-6" style={{
+          color: filter === "all" ? "var(--color-9395d3)" : "var(--color-8b8787)",
+          fontWeight: filter === "all" ? 600 : 400,
+          marginLeft: "10px",
+          marginRight: "20px"
+        }}>All</span>
+        <button
+          className="navbar-icon"
+          aria-label="tick"
+          onClick={onNavCompleted}
+          style={{
+            opacity: filter === "completed" ? 1 : 0.6,
+            background: "none",
+            border: "none"
+          }}
+        >
           <span className="icon tick" />
         </button>
-        <span className="nav-label typo-7" style={{ color: filter === "completed" ? "var(--color-8b8787)" : "" }}>Completed</span>
+        <span className="nav-label typo-7" style={{
+          color: filter === "completed" ? "var(--color-8b8787)" : "var(--color-9395d3)",
+          fontWeight: filter === "completed" ? 600 : 400,
+          marginLeft: "10px"
+        }}>Completed</span>
       </nav>
-      <section className="todos-list">
+      <section className="todos-list" style={{ gap: "18px" }}>
         {shownTodos.length === 0 && (
           <div className="todo-item">
             <div className="titles">

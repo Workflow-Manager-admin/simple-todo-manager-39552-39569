@@ -20,11 +20,12 @@ function AddTodoPage({ onBack, onAdd }) {
   return (
     <div className="body--screen">
       <StatusBar />
-      <AppBar title="Add Task" showBack={true} onBack={onBack} />
+      {/* app-bar with right icon */}
+      <AppBar title="Add Task" showBack={true} onBack={onBack} rightCircleIcon={true} />
       <main>
         <form id="add-todo-form" onSubmit={handleSubmit}>
-          <div className="input-container">
-            <label htmlFor="todo-title" className="input-label typo-11">
+          <div className="input-container" style={{ marginTop: "35px" }}>
+            <label htmlFor="todo-title" className="input-label typo-11" style={{ marginBottom: "10px" }}>
               Title
             </label>
             <input
@@ -34,13 +35,24 @@ function AddTodoPage({ onBack, onAdd }) {
               className="typo-11"
               value={title}
               onChange={e => setTitle(e.target.value)}
-              style={{ width: "100%", padding: "8px 0", border: "none", outline: "none", background: "transparent" }}
+              style={{
+                width: "100%",
+                padding: "8px 0",
+                border: "none",
+                outline: "none",
+                background: "transparent",
+                fontFamily: 'Jost, sans-serif',
+                fontSize: '16px',
+                fontWeight: 400,
+                lineHeight: '23.12px',
+                color: "var(--color-8b8787)",
+              }}
               required
             />
             <div className="input-underline"></div>
           </div>
-          <div className="input-container">
-            <label htmlFor="todo-detail" className="input-label typo-11">
+          <div className="input-container" style={{ marginBottom: "8px" }}>
+            <label htmlFor="todo-detail" className="input-label typo-11" style={{ marginBottom: "10px" }}>
               Detail
             </label>
             <input
@@ -50,12 +62,44 @@ function AddTodoPage({ onBack, onAdd }) {
               className="typo-11"
               value={detail}
               onChange={e => setDetail(e.target.value)}
-              style={{ width: "100%", padding: "8px 0", border: "none", outline: "none", background: "transparent" }}
+              style={{
+                width: "100%",
+                padding: "8px 0",
+                border: "none",
+                outline: "none",
+                background: "transparent",
+                fontFamily: 'Jost, sans-serif',
+                fontSize: '16px',
+                fontWeight: 400,
+                lineHeight: '23.12px',
+                color: "var(--color-8b8787)"
+              }}
             />
             <div className="input-underline"></div>
           </div>
-          <div className="add-btn-group">
-            <button className="add-btn typo-12" type="submit">
+          <div className="add-btn-group" style={{
+            margin: "36px auto 0 auto",
+            borderRadius: "var(--radius-15)",
+            background: "var(--color-9395d3)",
+            boxShadow: "var(--shadow-0)",
+            width: "386px",
+            maxWidth: "95%",
+            height: "65px",
+            display: "flex",
+            justifyContent: "center", alignItems: "center"
+          }}>
+            <button
+              className="add-btn typo-12"
+              type="submit"
+              style={{
+                border: "none",
+                background: "none",
+                color: "var(--color-ffffff)",
+                fontSize: "20px",
+                fontWeight: 600,
+                fontFamily: 'Jost, sans-serif',
+                cursor: "pointer",
+              }}>
               ADD
             </button>
           </div>

@@ -11,7 +11,7 @@ import "../assets/design-system.css";
  */
 function AppBar({ title, showBack, onBack, rightCircleIcon = false }) {
   return (
-    <div className="app-bar">
+    <div className="app-bar" style={{ position: "relative", minHeight: "118px" }}>
       {showBack && (
         <button
           className="icon-btn"
@@ -20,16 +20,39 @@ function AppBar({ title, showBack, onBack, rightCircleIcon = false }) {
             position: "absolute",
             left: 24,
             top: "50%",
-            transform: "translateY(-50%)"
+            transform: "translateY(-50%)",
+            zIndex: 2
           }}
           onClick={onBack}
         >
-          <span className="icon" style={{ width: 25, height: 25, background: "var(--color-ffffff)" }} />
+          {/* Real arrow svg instead of placeholder circle */}
+          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" style={{ display: 'block' }}>
+            <circle cx="12.5" cy="12.5" r="12.5" fill="#fff" />
+            <path d="M14.8 18.1l-4.2-4.1c-.4-.4-.4-1 0-1.4l4.2-4.1a1 1 0 0 1 1.4 1.4l-3.5 3.4 3.5 3.4a1 1 0 0 1-1.4 1.4z" fill="#9395d3"/>
+          </svg>
         </button>
       )}
-      <span className="app-bar__title typo-8">{title}</span>
+      <span className="app-bar__title typo-8" style={{
+        margin: "0 auto",
+        fontFamily: "'Jost', sans-serif",
+        fontSize: "24px",
+        fontWeight: 600,
+        lineHeight: "34.68px",
+        color: "var(--color-ffffff)"
+      }}>{title}</span>
       {rightCircleIcon && (
-        <span className="app-bar__icon icon" style={{ background: "var(--color-d6d7ef)" }} />
+        <span
+          className="app-bar__icon icon"
+          style={{
+            background: "var(--color-d6d7ef)",
+            position: "absolute",
+            right: 36,
+            width: 60,
+            height: 60,
+            top: "50%",
+            transform: "translateY(-50%)"
+          }}
+        />
       )}
     </div>
   );

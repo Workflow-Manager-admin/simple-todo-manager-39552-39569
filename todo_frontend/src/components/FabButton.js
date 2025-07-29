@@ -9,7 +9,13 @@ import "../assets/design-system.css";
 function FabButton({ onClick }) {
   return (
     <button className="fab-btn" aria-label="Add New Todo" onClick={onClick}>
-      <span className="fab-btn__icon icon plus" />
+      {/* SVG plus icon with Figma weights */}
+      <span style={{width: 21, height: 23, display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <svg width="21" height="23" viewBox="0 0 21 23" fill="none" style={{display: "block"}}>
+          <rect width="21" height="23" rx="5" fill="#fff" opacity="0"/>
+          <path d="M10.5 4v15M4 11.5h13" stroke="#fff" strokeWidth="2.5" strokeLinecap="round"/>
+        </svg>
+      </span>
     </button>
   );
 }

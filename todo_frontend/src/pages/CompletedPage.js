@@ -16,7 +16,9 @@ function CompletedPage({ todos, onBack }) {
     <div className="body--screen">
       <StatusBar />
       <AppBar title="Completed Task" showBack={true} onBack={onBack} />
-      <section className="todos-list">
+      {/* Add spacing below AppBar per Figma */}
+      <div style={{ height: "10px" }} />
+      <section className="todos-list" style={{ gap: "18px" }}>
         {todos.length === 0 && (
           <div className="todo-item">
             <div className="titles">No completed todos.</div>
