@@ -40,7 +40,12 @@ function TodosPage({
             border: "none"
           }}
         >
-          <span className="icon playlist" />
+          <span style={{width:30,height:30,display:"flex",alignItems:"center",justifyContent:"center"}}>
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+              <rect x="0.75" y="1.5" width="16.5" height="3" rx="1.5" fill="#8b8787"/>
+              <rect x="0.75" y="7.5" width="9" height="3" rx="1.5" fill="#8b8787"/>
+            </svg>
+          </span>
         </button>
         <span className="nav-label typo-6" style={{
           color: filter === "all" ? "var(--color-9395d3)" : "var(--color-8b8787)",
@@ -58,7 +63,11 @@ function TodosPage({
             border: "none"
           }}
         >
-          <span className="icon tick" />
+          <span style={{width:30,height:30,display:"flex",alignItems:"center",justifyContent:"center"}}>
+            <svg width="20" height="15" viewBox="0 0 20 15" fill="none">
+              <path d="M2 7.5L8 13L18 2" stroke="#8b8787" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
         </button>
         <span className="nav-label typo-7" style={{
           color: filter === "completed" ? "var(--color-8b8787)" : "var(--color-9395d3)",

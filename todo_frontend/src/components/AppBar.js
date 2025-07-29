@@ -42,17 +42,30 @@ function AppBar({ title, showBack, onBack, rightCircleIcon = false }) {
       }}>{title}</span>
       {rightCircleIcon && (
         <span
-          className="app-bar__icon icon"
+          className="app-bar__icon"
           style={{
-            background: "var(--color-d6d7ef)",
             position: "absolute",
             right: 36,
             width: 60,
             height: 60,
             top: "50%",
-            transform: "translateY(-50%)"
-          }}
-        />
+            transform: "translateY(-50%)",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            {/* Calendar SVG from Figma */}
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <rect x="0" y="0" width="60" height="60" rx="16" fill="#d6d7ef"/>
+              <rect x="14" y="20" width="32" height="24" rx="6" fill="#F5F4FE" stroke="#9395d3" strokeWidth="2"/>
+              <rect x="21" y="26" width="4" height="4" rx="2" fill="#9395d3"/>
+              <rect x="27" y="26" width="4" height="4" rx="2" fill="#9395d3"/>
+              <rect x="33" y="26" width="4" height="4" rx="2" fill="#9395d3"/>
+              <rect x="21" y="32" width="4" height="4" rx="2" fill="#9395d3"/>
+              <rect x="27" y="32" width="4" height="4" rx="2" fill="#9395d3"/>
+              <rect x="33" y="32" width="4" height="4" rx="2" fill="#9395d3"/>
+            </svg>
+        </span>
       )}
     </div>
   );

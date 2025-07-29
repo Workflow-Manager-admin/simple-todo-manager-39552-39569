@@ -71,21 +71,34 @@ function TodoItem({
             style={{ opacity: completed ? 0.4 : 1 }}
           >
             {/* Check circle SVG */}
-            <span className="icon checkcircle" style={{
-              width: 25, height: 25, background: "var(--color-8b8787)", borderRadius: "50%"
-            }} />
+            <span style={{width:25,height:25,display:"flex",alignItems:"center",justifyContent:"center"}}>
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <circle cx="12.5" cy="12.5" r="12.5" fill="#f5f4fe"/>
+                <path d="M7 13.5L11 17L18 9" stroke="#9395d3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
           </button>
           {/* Edit */}
           <button className="icon-btn" aria-label="edit" title="Edit" onClick={onEdit}>
-            <span className="icon pencil" style={{
-              width: 25, height: 25, background: "var(--color-8b8787)", borderRadius: "50%"
-            }} />
+            <span style={{width:25,height:25,display:"flex",alignItems:"center",justifyContent:"center"}}>
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <rect x="2.5" y="2.5" width="20" height="20" rx="5" fill="#f5f4fe"/>
+                <path d="M9 17h7" stroke="#9395d3" strokeWidth="2"/>
+                <path d="M13.586 8a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-6.364 6.364a1 1 0 01-.516.27l-2.283.456a.4.4 0 01-.473-.472l.456-2.283a1 1 0 01.27-.516l6.364-6.364z" stroke="#9395d3" strokeWidth="2"/>
+              </svg>
+            </span>
           </button>
           {/* Delete */}
           <button className="icon-btn" aria-label="delete" title="Delete" onClick={onDelete}>
-            <span className="icon trash" style={{
-              width: 25, height: 25, background: "var(--color-8b8787)", borderRadius: "50%"
-            }} />
+            <span style={{width:25,height:25,display:"flex",alignItems:"center",justifyContent:"center"}}>
+              <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+                <rect x="2.5" y="2.5" width="20" height="20" rx="5" fill="#f5f4fe"/>
+                <rect x="8" y="10" width="9" height="8" rx="2" stroke="#E87A41" strokeWidth="2"/>
+                <path d="M10 12v4M15 12v4" stroke="#E87A41" strokeWidth="1.5" strokeLinecap="round"/>
+                <rect x="10" y="7" width="4" height="2" rx="1" fill="#E87A41"/>
+                <rect x="7" y="8" width="11" height="2" rx="1" fill="#B3B7EE"/>
+              </svg>
+            </span>
           </button>
         </div>
       )}
